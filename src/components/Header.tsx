@@ -18,14 +18,9 @@ export function Header() {
             <img
               src="/assets/mobilelogo.png"
               alt=""
-              className="h-10 w-auto shrink-0 lg:hidden"
+              className="h-10 w-auto shrink-0"
             />
-            <img
-              src="/assets/logo.png"
-              alt=""
-              className="hidden lg:block h-12 w-auto shrink-0"
-            />
-            <span className="flex flex-col min-w-0 lg:hidden">
+            <span className="flex flex-col min-w-0">
               <span className="font-display text-base font-bold text-websleek-dark tracking-wide leading-tight truncate">
                 Websleek
               </span>
