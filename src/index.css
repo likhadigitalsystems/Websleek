@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+
+  --color-websleek-teal: #16777e;
+  --color-websleek-blue: #0a74b1;
+  --color-websleek-ocean: #107496;
+  --color-websleek-green: #178768;
+  --color-websleek-dark: #272323;
+  --color-websleek-sky: #35a4cd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-websleek-dark);
+  background-color: #f8fafb;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-websleek-teal), var(--color-websleek-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, var(--color-websleek-teal) 0%, var(--color-websleek-blue) 55%, var(--color-websleek-ocean) 100%);
+}
+
+.hero-page-bg {
+  background-image: url(/assets/hero.png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
