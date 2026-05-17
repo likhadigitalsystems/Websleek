@@ -17,8 +17,10 @@ export function Contact() {
           <p className="text-sm font-semibold uppercase tracking-widest text-websleek-teal mb-3">
             Contact
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-websleek-dark">Request a System Assessment</h1>
-          <p className="mt-4 text-lg text-websleek-dark/70 max-w-2xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-websleek-dark leading-tight">
+            Request a System Assessment
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-websleek-dark/70 max-w-2xl">
             Tell us about your agency or business. We'll qualify the fit and recommend the right
             path — OpsCore, GovFlow, or a scoped entry module.
           </p>

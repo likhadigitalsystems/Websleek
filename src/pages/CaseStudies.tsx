@@ -1,4 +1,5 @@
 import { CTASection } from "../components/CTASection";
+import { CardCarousel } from "../components/CardCarousel";
 import { PageHero } from "../components/PageHero";
 import { caseStudies } from "../data/content";
 
@@ -10,10 +11,10 @@ export function CaseStudies() {
           <p className="text-websleek-blue text-sm font-semibold uppercase tracking-widest mb-3">
             Case Studies
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl leading-tight">
             Proof of deployment — redacted where required
           </h1>
-          <p className="mt-4 text-lg text-websleek-dark/70 max-w-2xl">
+          <p className="mt-4 text-base sm:text-lg text-websleek-dark/70 max-w-2xl">
             Real outcomes from government and SME engagements. Full details available on request
             during assessment calls.
           </p>
@@ -22,11 +23,11 @@ export function CaseStudies() {
 
       <section className="py-16 md:py-24 bg-websleek-sky/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <CardCarousel>
             {caseStudies.map((study) => (
               <article
                 key={study.title}
-                className="bg-white rounded-2xl p-8 border border-websleek-sky/20 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                className="w-full min-w-0 bg-white rounded-2xl p-5 sm:p-8 border border-websleek-sky/20 shadow-sm hover:shadow-md transition-shadow flex flex-col"
               >
                 <p className="text-xs font-semibold uppercase tracking-wider text-websleek-blue">
                   {study.sector}
@@ -47,8 +48,8 @@ export function CaseStudies() {
                 </div>
               </article>
             ))}
-          </div>
-          <p className="text-center mt-12 text-sm text-websleek-dark/50">
+          </CardCarousel>
+          <p className="text-center mt-8 sm:mt-12 text-sm text-websleek-dark/50">
             Additional case studies available for qualified government and enterprise prospects.
           </p>
         </div>

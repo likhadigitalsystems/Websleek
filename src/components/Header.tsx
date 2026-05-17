@@ -9,12 +9,30 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between py-3">
-          <Link to="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
+          <Link
+            to="/"
+            className="flex items-center gap-2.5 shrink-0 min-w-0"
+            onClick={() => setOpen(false)}
+            aria-label="Websleek IT Solutions — Home"
+          >
+            <img
+              src="/assets/mobilelogo.png"
+              alt=""
+              className="h-10 w-auto shrink-0 lg:hidden"
+            />
             <img
               src="/assets/logo.png"
-              alt="Websleek IT Solutions"
-              className="h-11 md:h-12 w-auto"
+              alt=""
+              className="hidden lg:block h-12 w-auto shrink-0"
             />
+            <span className="flex flex-col min-w-0 lg:hidden">
+              <span className="font-display text-base font-bold text-websleek-dark tracking-wide leading-tight truncate">
+                Websleek
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-websleek-teal leading-tight">
+                IT Solutions
+              </span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">

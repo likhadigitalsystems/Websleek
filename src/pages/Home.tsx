@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { CardCarousel } from "../components/CardCarousel";
 import { FAQ } from "../components/FAQ";
 import { HeroSection } from "../components/HeroSection";
 import { SectionHeading } from "../components/SectionHeading";
@@ -13,22 +14,30 @@ export function Home() {
       <HeroSection />
 
       {/* Core service areas */}
-      <section className="py-16 md:py-24 bg-gray-50/80">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What we do"
             title="Our services"
             subtitle="Hosting, POS, websites, and IT support — delivered with accountability for Philippine businesses."
           />
-          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+          <CardCarousel
+            desktopClassName="sm:grid sm:grid-cols-2 xl:grid-cols-4"
+            gapClassName="gap-3 sm:gap-6 lg:gap-8"
+            gridFrom="sm"
+          >
             {services.map((service) => (
               <Link
                 key={service.slug}
                 to={`/services/${service.slug}`}
-                className="group flex flex-col rounded-2xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-websleek-teal/30 transition-all"
+                className="group flex flex-col w-full min-w-0 rounded-2xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-websleek-teal/30 transition-all"
               >
-                <ServiceThumbnail src={service.image} alt={service.title} />
-                <div className="p-5 flex flex-col flex-1">
+                <ServiceThumbnail
+                  src={service.image}
+                  alt={service.title}
+                  className="[&_img]:max-h-40 [&_img]:w-full [&_img]:object-contain sm:[&_img]:max-h-44 md:[&_img]:max-h-none"
+                />
+                <div className="p-4 sm:p-5 flex flex-col flex-1">
                   <h3 className="text-sm font-bold text-websleek-dark group-hover:text-websleek-teal transition-colors leading-snug">
                     {service.shortTitle}
                   </h3>
@@ -42,7 +51,7 @@ export function Home() {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardCarousel>
           <div className="text-center mt-10">
             <Link
               to="/services"
@@ -55,30 +64,30 @@ export function Home() {
       </section>
 
       {/* Operational clarity */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How we deliver"
             title="Operational clarity"
             subtitle="Every engagement is built for accountability — not just go-live."
           />
-          <div className="grid md:grid-cols-3 gap-6">
+          <CardCarousel desktopClassName="md:grid md:grid-cols-3" gapClassName="gap-4 md:gap-6">
             {operationalPillars.map((pillar) => (
               <article
                 key={pillar.title}
-                className="rounded-2xl border border-websleek-sky/20 bg-gradient-to-b from-white to-websleek-sky/5 p-7"
+                className="w-full min-w-0 rounded-2xl border border-websleek-sky/20 bg-gradient-to-b from-white to-websleek-sky/5 p-5 sm:p-7"
               >
                 <ServiceIcon name={pillar.icon} />
                 <h3 className="mt-4 text-lg font-bold text-websleek-dark">{pillar.title}</h3>
                 <p className="mt-2 text-sm text-websleek-dark/60 leading-relaxed">{pillar.description}</p>
               </article>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-16 md:py-24 bg-websleek-dark text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-24 bg-websleek-dark text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
@@ -94,18 +103,22 @@ export function Home() {
             subtitle="From discovery to long-term operations — no disappearing after launch."
             light
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <CardCarousel
+            desktopClassName="sm:grid sm:grid-cols-2 lg:grid-cols-4"
+            gapClassName="gap-3 sm:gap-5"
+            gridFrom="sm"
+          >
             {processSteps.map((step) => (
               <div
                 key={step.step}
-                className="rounded-xl bg-white/5 border border-white/10 p-6 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                className="w-full min-w-0 rounded-xl bg-white/5 border border-white/10 p-5 sm:p-6 backdrop-blur-sm hover:bg-white/10 transition-colors"
               >
                 <span className="text-2xl font-bold text-websleek-sky">{step.step}</span>
                 <h3 className="mt-3 text-lg font-bold">{step.title}</h3>
                 <p className="mt-2 text-sm text-white/65 leading-relaxed">{step.description}</p>
               </div>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Service } from "../data/services";
+import { CardCarousel } from "./CardCarousel";
 import { PageHero } from "./PageHero";
 import { ServiceThumbnail } from "./ServiceThumbnail";
 import { businessContact, services } from "../data/services";
@@ -89,7 +90,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               >
                 {service.tagline}
               </span>
-              <h1 className="mt-5 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-websleek-dark leading-[1.12] tracking-tight">
+              <h1 className="mt-5 text-2xl sm:text-4xl lg:text-[2.75rem] font-bold text-websleek-dark leading-[1.12] tracking-tight">
                 {service.title}
               </h1>
               <p className="mt-5 text-lg text-websleek-dark/65 leading-relaxed max-w-xl">
@@ -143,9 +144,9 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
       {/* Delivery pillars */}
       <section className="bg-gray-50/80 border-b border-gray-100 py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <CardCarousel desktopClassName="md:grid md:grid-cols-3" gapClassName="gap-3 md:gap-8">
             {deliveryPoints.map((point) => (
-              <div key={point.title} className="flex gap-4">
+              <div key={point.title} className="flex w-full min-w-0 gap-4 p-4 sm:p-0 rounded-xl sm:rounded-none bg-white sm:bg-transparent border border-gray-100 sm:border-0">
                 <span className={`shrink-0 flex items-center justify-center w-10 h-10 rounded-lg ${accent.icon}`}>
                   <CheckIcon className="w-5 h-5" />
                 </span>
@@ -155,7 +156,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                 </div>
               </div>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 
@@ -270,14 +271,18 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               View all services →
             </Link>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <CardCarousel desktopClassName="sm:grid sm:grid-cols-3" gridFrom="sm">
             {others.map((s) => (
               <Link
                 key={s.slug}
                 to={`/services/${s.slug}`}
-                className="group flex flex-col rounded-2xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-websleek-teal/20 transition-all"
+                className="group flex flex-col w-full min-w-0 rounded-2xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-websleek-teal/20 transition-all"
               >
-                <ServiceThumbnail src={s.image} alt={s.title} />
+                <ServiceThumbnail
+                  src={s.image}
+                  alt={s.title}
+                  className="[&_img]:max-h-40 [&_img]:w-full [&_img]:object-contain sm:[&_img]:max-h-none"
+                />
                 <div className="p-5 border-t border-gray-50">
                   <p className="font-semibold text-websleek-dark group-hover:text-websleek-teal transition-colors">
                     {s.shortTitle}
@@ -289,7 +294,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
     </>

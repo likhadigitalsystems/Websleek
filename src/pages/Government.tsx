@@ -1,4 +1,5 @@
 import { Button } from "../components/Button";
+import { CardCarousel } from "../components/CardCarousel";
 import { PageHero } from "../components/PageHero";
 import { CTASection } from "../components/CTASection";
 import { SectionHeading } from "../components/SectionHeading";
@@ -12,7 +13,7 @@ export function Government() {
           <p className="text-sm font-semibold uppercase tracking-widest text-websleek-teal mb-3">
             Government
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl leading-tight">
             Evaluation-ready capability — not just marketing
           </h1>
           <p className="mt-4 text-lg text-websleek-dark/70 max-w-2xl">
@@ -32,11 +33,15 @@ export function Government() {
             title="Government Systems Experience"
             subtitle="What evaluators look for — and what most IT vendors skip."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <CardCarousel
+            desktopClassName="sm:grid sm:grid-cols-2 lg:grid-cols-3"
+            gapClassName="gap-3 sm:gap-6"
+            gridFrom="sm"
+          >
             {govCapabilities.map((cap) => (
               <div
                 key={cap}
-                className="flex items-start gap-4 p-6 rounded-xl bg-websleek-sky/10 border border-websleek-sky/20"
+                className="flex w-full min-w-0 items-start gap-4 p-5 sm:p-6 rounded-xl bg-websleek-sky/10 border border-websleek-sky/20"
               >
                 <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-websleek-blue text-white font-bold shrink-0">
                   ✓
@@ -44,7 +49,7 @@ export function Government() {
                 <p className="font-medium text-websleek-dark">{cap}</p>
               </div>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 

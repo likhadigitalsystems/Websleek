@@ -16,10 +16,10 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
 
   return (
-    <div className={`max-w-3xl mb-12 ${alignClass}`}>
+    <div className={`max-w-3xl mb-8 sm:mb-12 ${alignClass}`}>
       {eyebrow && (
         <p
-          className={`text-sm font-semibold uppercase tracking-widest mb-3 ${
+          className={`text-xs sm:text-sm font-semibold uppercase tracking-widest mb-2 sm:mb-3 ${
             light ? "text-websleek-sky" : "text-websleek-blue"
           }`}
         >
@@ -27,7 +27,7 @@ export function SectionHeading({
         </p>
       )}
       <h2
-        className={`text-3xl md:text-4xl font-bold tracking-tight ${
+        className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight ${
           light ? "text-white" : "text-websleek-dark"
         }`}
       >
@@ -35,7 +35,7 @@ export function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-lg leading-relaxed ${
+          className={`mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed ${
             light ? "text-white/80" : "text-websleek-dark/70"
           }`}
         >

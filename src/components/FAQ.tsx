@@ -10,7 +10,7 @@ export function FAQ() {
         <p className="text-sm font-semibold uppercase tracking-widest text-websleek-teal text-center mb-3">
           FAQ
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-websleek-dark text-center mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-websleek-dark text-center mb-8 sm:mb-10">
           Common questions
         </h2>
         <div className="space-y-3">

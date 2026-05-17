@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
+import { CardCarousel } from "../components/CardCarousel";
 import { PageHero } from "../components/PageHero";
 import { CTASection } from "../components/CTASection";
 import { SectionHeading } from "../components/SectionHeading";
@@ -13,7 +14,7 @@ export function Industries() {
           <p className="text-sm font-semibold uppercase tracking-widest text-websleek-teal mb-3">
             Industries
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-websleek-dark max-w-3xl leading-tight">
             Vertical focus for sharper SME marketing
           </h1>
           <p className="mt-4 text-lg text-websleek-dark/70 max-w-2xl">
@@ -29,14 +30,14 @@ export function Industries() {
             title="We replace spreadsheets with systems that grow"
             subtitle="Each vertical gets a dedicated landing approach, tailored demo, pricing starting range, and case examples."
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <CardCarousel>
             {industries.map((ind) => (
               <article
                 key={ind.name}
-                className="rounded-2xl border border-websleek-sky/25 overflow-hidden hover:shadow-lg transition-shadow"
+                className="w-full min-w-0 rounded-2xl border border-websleek-sky/25 overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <div className="h-2 gradient-brand" />
-                <div className="p-8">
+                <div className="p-5 sm:p-8">
                   <h2 className="text-xl font-bold text-websleek-dark">{ind.name}</h2>
                   <div className="mt-6 space-y-4">
                     <div>
@@ -57,7 +58,7 @@ export function Industries() {
                 </div>
               </article>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 

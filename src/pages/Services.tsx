@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { CardCarousel } from "../components/CardCarousel";
 import { PageHero } from "../components/PageHero";
 import { SectionHeading } from "../components/SectionHeading";
 import { ServiceThumbnail } from "../components/ServiceThumbnail";
@@ -12,7 +13,7 @@ export function Services() {
           <p className="text-sm font-semibold uppercase tracking-widest text-websleek-teal mb-3">
             Services
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-websleek-dark max-w-3xl leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-websleek-dark max-w-3xl leading-tight">
             Technology services for{" "}
             <span className="text-websleek-teal">Philippine businesses</span>
           </h1>
@@ -25,18 +26,18 @@ export function Services() {
 
       <section className="py-10 md:py-14 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          <CardCarousel desktopClassName="lg:grid lg:grid-cols-4" gapClassName="gap-3 lg:gap-5" gridFrom="lg">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 to={`/services/${service.slug}`}
-                className="group flex flex-col rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-md hover:border-websleek-teal/30 transition-all"
+                className="group flex flex-col w-full min-w-0 rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-md hover:border-websleek-teal/30 transition-all"
               >
                 <div className="overflow-hidden">
                   <ServiceThumbnail
                     src={service.image}
                     alt={service.title}
-                    className="[&_img]:max-h-32 [&_img]:w-full [&_img]:object-contain [&_img]:mx-auto"
+                    className="[&_img]:max-h-40 [&_img]:w-full [&_img]:object-contain [&_img]:mx-auto lg:[&_img]:max-h-32"
                   />
                 </div>
                 <div className="p-4 flex flex-col flex-1 border-t border-gray-50">
@@ -53,7 +54,7 @@ export function Services() {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardCarousel>
         </div>
       </section>
 
